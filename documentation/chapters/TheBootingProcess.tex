@@ -1,0 +1,48 @@
+\chapter{The Booting Process}
+\section{Base System Components}
+
+\subsection{init.elf}
+The init process is the first user mode process that is launched and has several duties like launching all
+subsequent processes and keeping track of crashed children. The start routine needed looks like in figure
+\ref{fig:initprocess}.
+
+%%\begin{enumerate}
+%%\item Start vfs.elf
+%%\item Wait for the "vfs" service to crop up
+%%\item Open config file "init.cfg"
+%%\item Read necessary options
+%%\item Start all subsequent processes described in the config file
+%%\item Wait several seconds
+%%\item Check on every child process
+%%\item Go two steps back
+%%\end{enumerate}
+
+\begin{figure}[h!]
+\centering
+\scalebox{0.8}{\input{chapters/uml/initprocess.latex}}
+\caption{The init process}
+\label{fig:initprocess}
+\end{figure}
+
+If a child crashes the init process should restart the process in a timely manner so normal operation can
+continue. If the broken process keeps crashing in a boot loop the init process needs to decide to
+stop relaunching the program.
+
+\subsection{vfs.elf}
+The Virtual File System has several responsibilities regarding files, directories and mount points.
+It has to implement the interface described in the "Operating System Interfaces" chapter and respond to the
+specified messages.
+
+\subsection{*.drv}
+All drivers should be launched directly using init.elf so they have all necessary rights to access
+advanced kernel functionality. It is possible to start them from any user process as long as the
+parent has the User Identification (UID) 0 and thus enough rights to request memory regions, call BIOS interrupts
+and do general driver operations. Drivers and driver launch order is specified in the init.cfg file.
+
+\section{The Booting Sequence}
+\begin{figure}[h!]
+%% \centering
+\scalebox{0.70}{\input{chapters/uml/bootsequence.latex}}
+\caption{The boot sequence}
+\label{fig:bootsequence}
+\end{figure}

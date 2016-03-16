@@ -1,0 +1,16 @@
+*~
+build
+*.img
+img
+rootsys
+.directory
+*.aux
+*.idx
+*.log
+*.gz
+*.bak
+*.toc
+*.pdf
+*.xmi
+*.png
+*.svg

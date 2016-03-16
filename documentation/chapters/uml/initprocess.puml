@@ -1,0 +1,8 @@
+@startuml
+init.elf -> vfs.elf: execute
+init.elf -> init.elf: sleep
+roramdisk -> vfs.elf: mount
+init.elf -> vfs.elf: read(init.cfg)
+vfs.elf -> roramdisk: read(init.cfg)
+init.elf -> userprocs: execute
+@enduml

@@ -1,0 +1,15 @@
+[submodule "modules/Base"]
+	path = modules/Base
+	url = git@github.com:DayOperatingSystem/Base.git
+[submodule "modules/Drivers"]
+	path = modules/Drivers
+	url = git@github.com:DayOperatingSystem/Drivers.git
+[submodule "modules/Kernel"]
+	path = modules/Kernel
+	url = git@github.com:DayOperatingSystem/Kernel.git
+[submodule "modules/Libraries"]
+	path = modules/Libraries
+	url = git@github.com:DayOperatingSystem/Libraries.git
+[submodule "modules/Binutils"]
+	path = modules/Binutils
+	url = git@github.com:DayOperatingSystem/Binutils.git

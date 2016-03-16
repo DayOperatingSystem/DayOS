@@ -1,0 +1,9 @@
+@startuml
+kernel -> krnlproc: execute
+kernel -> roramdisk : execute
+kernel -> init.elf: execute
+init.elf -> vfs.elf: execute
+init.elf -> drivers: execute
+init.elf -> login.elf: execute
+@enduml
+ 
