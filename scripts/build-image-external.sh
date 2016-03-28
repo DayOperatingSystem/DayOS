@@ -1,5 +1,6 @@
 #!/bin/sh
 
+echo Sources: $2 Binaries: $1
 rm -f $1/ramdisk.tar
 
 #mkdir -p rootsys/image/system
@@ -26,8 +27,10 @@ mkdir -p $2/img/boot/grub2
 
 # Den DayOS-Kernel auf das Image kopieren.
 cp $1/kernel $2/img/dayos/bin
+
 # Die RAM-Disk kopieren
-cp $1/ramdisk.tar $2/img/dayos
+cp $1/ramdisk.tar $2/img/dayos -v
+
 # Die menu.lst auf das Image kopieren.
 cp $2/scripts/grub/grub.cfg $2/img/boot/grub2/grub.cfg
 cp $2/scripts/grub/grub.cfg $2/img/boot/grub/grub.cfg
