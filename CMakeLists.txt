@@ -19,8 +19,8 @@ SET(CMAKE_LIBRARY_OUTPUT_DIRECTORY_RELEASE "${EXECUTABLE_OUTPUT_PATH}")
 #SET(CMAKE_ARCHIVE_OUTPUT_DIRECTORY_RELEASE "${OUTPUT_DIRECTORY}")
 
 set(DRIVERKIT_INCLUDE "${CMAKE_SOURCE_DIR}/modules/Libraries/driverkit/include")
-set(LIBDAYOS_INCLUDE "${CMAKE_SOURCE_DIR}/modules/Libraries/libdayos/include" "${CMAKE_SOURCE_DIR}/modules/Kernel/sys")
-set(DOXYGEN_SOURCEDIRS "${LIBDAYOS_INCLUDE} ${DAYOS_KERNEL_INCLUDE}")
+set(LIBDAYOS_INCLUDE "${CMAKE_SOURCE_DIR}/modules/Libraries/libdayos/include/dayos" "${CMAKE_SOURCE_DIR}/modules/Libraries/libdayos/include" "${CMAKE_SOURCE_DIR}/modules/Kernel/sys")
+set(DOXYGEN_SOURCEDIRS "${CMAKE_SOURCE_DIR}/modules/Libraries/driverkit/include ${CMAKE_SOURCE_DIR}/modules/Libraries/libdayos/include/dayos ${CMAKE_SOURCE_DIR}/modules/Libraries/libdayos/include ${CMAKE_SOURCE_DIR}/modules/Kernel/sys")
 
 find_package(Doxygen)
 if(DOXYGEN_FOUND)
